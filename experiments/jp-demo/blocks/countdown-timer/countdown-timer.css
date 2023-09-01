@@ -1,0 +1,139 @@
+.countdown-timer .foreground {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.timer-container {
+  --tt-digit-height: 27px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.timer-container .timer-label {
+  display: flex;
+  align-items: center;
+}
+
+.timer-container .timer-label p {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  margin: 0;
+  color: currentcolor;
+}
+
+.timer-container .timer {
+  display: flex;
+  gap: 16px;
+}
+
+.timer-container .time-unit {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+}
+
+.timer-container .time-unit-title {
+  display: block;
+  font-weight: bold;
+  text-align: left;
+  font-size: 14px;
+  line-height: 17px;
+  color: currentcolor;
+  text-transform: uppercase;
+}
+
+.timer-container .time-digit-group {
+  display: flex;
+  gap: 4px;
+}
+
+.timer-container .time-digit {
+  position: relative;
+  background-color: #fff;
+  border: 1px solid #000;
+  border-radius: 2px;
+  box-shadow: 0 3px 6px #00000029;
+  height: var(--tt-digit-height);
+  width: calc(var(--tt-digit-height) + 3px);
+  line-height: var(--tt-digit-height);
+  font-size: calc(var(--tt-digit-height) - 3px);
+  font-weight: 700;
+  color: #000;
+  text-align: center;
+  perspective: 80px;
+  box-sizing: content-box;
+}
+
+.timer-container .time-digit > div {
+  height: 50%;
+  overflow: hidden;
+  position: relative;
+  background-color: #fff;
+}
+
+.timer-container .time-digit > div span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+.timer-container .time-digit .digit-top,
+.timer-container .time-digit .digit-flip-top {
+  border-radius: 2px 2px 0 0;
+  box-sizing: content-box;
+}
+
+.timer-container .time-digit .digit-bottom,
+.timer-container .time-digit .digit-flip-bottom {
+  border-radius: 0 0 2px 2px;
+  box-sizing: border-box;
+}
+
+.timer-container .time-digit .digit-top {
+  top: 0;
+}
+
+.timer-container .time-digit .digit-top span {
+  top: 0;
+}
+
+.timer-container .time-digit .digit-bottom {
+  bottom: 0;
+  border-top: 1px solid #000;
+}
+
+.timer-container .time-digit .digit-bottom span {
+  bottom: 0;
+}
+
+.timer-container .time-digit .digit-flip {
+  position: absolute;
+  left: 0;
+  right: 0;
+}
+
+.timer-container .time-digit .digit-flip-top {
+  top: 0;
+  transform-origin: center bottom;
+}
+
+.timer-container .time-digit .digit-flip-top span {
+  top: 0;
+}
+
+.timer-container .time-digit .digit-flip-bottom {
+  top: 50%;
+  border-top: 1px solid #000;
+  transform-origin: center top;
+  transform: rotateX(90deg);
+}
+
+.timer-container .time-digit .digit-flip-bottom span {
+  bottom: 0;
+}
